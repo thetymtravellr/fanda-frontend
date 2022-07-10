@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import React from "react";
 
-const Icons = ({ icon, className, left, duration }) => {
-  console.log(duration);
+const Icons = ({item}) => {
+  const { icon, className, duration, left } = item;
   return (
     <>
       {left ? (
@@ -17,7 +17,7 @@ const Icons = ({ icon, className, left, duration }) => {
         </motion.div>
       ) : (
         <motion.div
-          initial={{ x: 100}}
+          initial={{ x: 100 }}
           animate={{ x: 0 }}
           style={{ position: "absolute" }}
           className={className}
