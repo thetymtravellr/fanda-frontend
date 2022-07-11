@@ -1,8 +1,9 @@
 import React from "react";
 import { GiHealthNormal } from "react-icons/gi";
+import { HiOutlineDesktopComputer } from "react-icons/hi";
 import { IoShirtOutline } from "react-icons/io5";
 import { MdOutlineChildFriendly, MdPets } from "react-icons/md";
-import { TbDeviceDesktop, TbShoe } from "react-icons/tb";
+import { TbShoe } from "react-icons/tb";
 import Category from "../../components/Category";
 
 const Categories = () => {
@@ -10,29 +11,23 @@ const Categories = () => {
     <section>
       <h1 className="text-3xl">Category</h1>
       <div className="flex space-x-8 my-4">
-        <Category>
-          <IoShirtOutline className="text-4xl mx-auto" />
-          <h4>Clothing</h4>
+        <Category title="Clothing">
+          <IoShirtOutline className="text-2xl mx-auto mb-2" />
         </Category>
-        <Category>
-          <TbDeviceDesktop className="text-4xl mx-auto" />
-          <h4>Electronics</h4>
+        <Category title="Electronics">
+          <HiOutlineDesktopComputer className="text-2xl mx-auto mb-2" />
         </Category>
-        <Category>
-          <TbShoe className="text-4xl mx-auto" />
-          <h4>Shoes</h4>
+        <Category title="Shoes">
+          <TbShoe className="text-2xl mx-auto mb-2" />
         </Category>
-        <Category>
-          <GiHealthNormal className="text-4xl mx-auto" />
-          <h4>Health</h4>
+        <Category title="Health">
+          <GiHealthNormal className="text-2xl mx-auto mb-2" />
         </Category>
-        <Category>
-          <MdPets className="text-4xl mx-auto" />
-          <h4>Pets</h4>
+        <Category title="Pets">
+          <MdPets className="text-2xl mx-auto mb-2" />
         </Category>
-        <Category>
-          <MdOutlineChildFriendly className="text-4xl mx-auto" />
-          <h4>Children</h4>
+        <Category title="Children">
+          <MdOutlineChildFriendly className="text-2xl mx-auto mb-2" />
         </Category>
       </div>
     </section>

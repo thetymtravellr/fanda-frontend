@@ -1,28 +1,31 @@
-import { BiHeart, BiSearch } from "react-icons/bi";
-import { BsCart2 } from "react-icons/bs";
+import { HiOutlineHeart, HiOutlineShoppingCart, HiSearch } from "react-icons/hi";
 import { Link } from "react-router-dom";
 
 const Nav = () => {
   return (
-    <header className="border flex items-center px-8 py-2 bg-blue-300">
+    <header className="border flex items-center px-8 py-2 bg-blue-300 text-white">
       <div className="">
         <Link to="/">
           <h1 className="text-3xl font-bold text-center">Fanda</h1>
         </Link>
       </div>
       <nav className="flex items-center justify-between px-4 w-full max-w-2xl ml-auto">
-        <div className="flex w-full max-w-md bg-gray-100 p-1 rounded">
-          <input type="text" className="bg-transparent outline-none w-full pl-4 text-base font-semibold uppercase" placeholder="search for items, brand" />
-          <button className="w-12">
-            <BiSearch className="text-xl mx-auto"/>
+        <div className="flex w-full max-w-md bg-blue-400 rounded h-10">
+          <input
+            type="text"
+            className="bg-transparent outline-none w-full px-3 text-base-100 text-sm uppercase"
+            placeholder="search for items, brand"
+          />
+          <button className="w-20 rounded-r hover:bg-blue-600 h-full">
+            <HiSearch className="text-xl font-bold mx-auto" />
           </button>
         </div>
-        <div className="flex items-center space-x-4 text-black">
+        <div className="flex items-center space-x-4 text-white">
           <Link to="/wishlist">
-            <BiHeart className="text-xl" />
+            <HiOutlineHeart className="text-xl" />
           </Link>
           <Link to="/cart">
-            <BsCart2 className="text-xl" />
+            <HiOutlineShoppingCart className="text-xl" />
           </Link>
           <div className="dropdown dropdown-end">
             <label tabIndex="0" className="cursor-pointer">

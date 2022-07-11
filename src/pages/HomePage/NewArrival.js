@@ -13,7 +13,7 @@ const NewArrival = () => {
         <Card />
       </div>
       <div className="w-full text-center mt-10">
-        <button className="btn-primary border-blue-400  text-blue-400 hover:bg-blue-500  hover:border-blue-500">
+        <button className="btn-primary border-blue-400  text-blue-400 hover:bg-blue-500 hover:border-blue-500 bg-transparent">
           <Link className="" to="/">
             See More
           </Link>
