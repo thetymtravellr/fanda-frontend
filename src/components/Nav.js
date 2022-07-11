@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Nav = () => {
   return (
-    <header className="border flex items-center px-8 py-2">
+    <header className="border flex items-center px-8 py-2 bg-blue-300">
       <div className="">
         <Link to="/">
           <h1 className="text-3xl font-bold text-center">Fanda</h1>
@@ -17,7 +17,7 @@ const Nav = () => {
             <BiSearch className="text-xl mx-auto"/>
           </button>
         </div>
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 text-black">
           <Link to="/wishlist">
             <BiHeart className="text-xl" />
           </Link>

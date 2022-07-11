@@ -14,7 +14,7 @@ const Hero = () => {
             Grab any 3 items and get 50% off!
             <br /> offer for limited time
           </h1>
-          <button className="mt-8 bg-black px-4 py-2 rounded-lg text-white">
+          <button className="mt-8 btn-primary border-teal-400  text-teal-400 hover:bg-teal-500 hover:border-teal-500">
             Shop now
           </button>
         </div>
