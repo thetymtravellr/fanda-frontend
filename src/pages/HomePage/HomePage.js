@@ -2,6 +2,7 @@ import Categories from "./Categories";
 import Discover from "./Discover";
 import Hero from "./Hero";
 import NewArrival from "./NewArrival";
+import Stats from "./Stats";
 
 const HomePage = () => {
   return (
@@ -10,6 +11,7 @@ const HomePage = () => {
       <Discover />
       <Categories />
       <NewArrival />
+      <Stats />
     </main>
   );
 };

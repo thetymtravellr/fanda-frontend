@@ -3,7 +3,7 @@ import { BiHeart } from "react-icons/bi";
 import { BsCart2 } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
-const Card = () => {
+const Card = ({ product }) => {
   return (
     <div className="border-2 border-transparent h-[320px] w-60 text-center rounded overflow-hidden hover:border-blue-500  group">
       <div className="w-full h-10 flex justify-center space-x-8 ">
@@ -22,14 +22,14 @@ const Card = () => {
         </Link>
         <img
           className="h-full w-full object-cover mx-auto group-hover:opacity-50 duration-200"
-          src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80"
+          src={product?.thumbnail}
           alt=""
         />
       </div>
       <div className="mt-2 h-full px-4">
-        <h4 className="text-lg">Shirt</h4>
+        <h4 className="text-lg">{product?.title}</h4>
         <p className="font-bold mt-1 text-sm">
-          <span className="text-yellow-500 mr-1">$</span>8.99
+          <span className="text-yellow-500 mr-1">$</span>{product?.price}
         </p>
       </div>
     </div>
