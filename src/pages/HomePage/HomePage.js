@@ -7,8 +7,8 @@ const HomePage = () => {
   return (
     <main className="w-full max-w-7xl mx-auto px-4">
       <Hero />
-      <Categories />
       <Discover />
+      <Categories />
       <NewArrival />
     </main>
   );
