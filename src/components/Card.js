@@ -6,7 +6,6 @@ import {
 import { Link } from "react-router-dom";
 
 const Card = ({ product }) => {
-  console.log(product);
   return (
     <div className="h-64 w-64 text-center rounded overflow-hidden group relative">
       <div className="absolute z-10 w-full h-full bg-blue-600 opacity-0 group-hover:opacity-95  duration-200">
