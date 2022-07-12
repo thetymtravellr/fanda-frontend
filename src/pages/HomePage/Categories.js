@@ -1,4 +1,5 @@
 import React from "react";
+import { BsBasket } from "react-icons/bs";
 import { GiHealthNormal } from "react-icons/gi";
 import { HiOutlineDesktopComputer } from "react-icons/hi";
 import { IoShirtOutline } from "react-icons/io5";
@@ -10,24 +11,27 @@ const Categories = () => {
   return (
     <section>
       <h1 className="text-3xl">Category</h1>
-      <div className="flex space-x-8 my-4">
-        <Category title="Clothing">
+      <div className="flex justify-center space-x-8 my-4">
+        <Category title="clothing" >
           <IoShirtOutline className="text-2xl mx-auto mb-2" />
         </Category>
-        <Category title="Electronics">
+        <Category title="electronics">
           <HiOutlineDesktopComputer className="text-2xl mx-auto mb-2" />
         </Category>
-        <Category title="Shoes">
+        <Category title="shoes">
           <TbShoe className="text-2xl mx-auto mb-2" />
         </Category>
-        <Category title="Health">
+        <Category title="health">
           <GiHealthNormal className="text-2xl mx-auto mb-2" />
         </Category>
-        <Category title="Pets">
+        <Category title="pets">
           <MdPets className="text-2xl mx-auto mb-2" />
         </Category>
-        <Category title="Children">
+        <Category title="children">
           <MdOutlineChildFriendly className="text-2xl mx-auto mb-2" />
+        </Category>
+        <Category title="groceries">
+          <BsBasket className="text-2xl mx-auto mb-2" />
         </Category>
       </div>
     </section>
