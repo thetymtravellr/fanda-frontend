@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import {
-  HiOutlineHeart, HiOutlineInformationCircle,
+  HiOutlineHeart,
+  HiOutlineInformationCircle,
   HiOutlineShoppingCart
 } from "react-icons/hi";
 import { Link } from "react-router-dom";
 
 const Card = ({ product }) => {
+  const [added, setAdded] = useState(false);
   return (
     <div className="h-64 w-64 text-center rounded overflow-hidden group relative">
       <div className="absolute z-10 w-full h-full bg-blue-600 opacity-0 group-hover:opacity-95  duration-200">
@@ -14,23 +16,32 @@ const Card = ({ product }) => {
             {product?.category[0]}
           </p>
         </div>
-        <div className="mt-12 flex items-center justify-center space-x-4">
-          <Link to={`/product/${product?._id}`}>
-            <button className="text-white text-2xl bg-blue-500 p-3 rounded-full">
+        {added ? (
+          <div className="h-32 grid place-content-center">
+            <Link to="/cart">
+              <button className="btn-primary text-white">Go To Cart</button>
+            </Link>
+          </div>
+        ) : (
+          <div className="mt-12 flex items-center justify-center space-x-4">
+            <button
+              type="button"
+              className="text-white text-2xl bg-blue-500 p-3 rounded-full"
+            >
               <HiOutlineShoppingCart />
             </button>
-          </Link>
-          <Link to={`/product/${product?._id}`}>
-            <button className="text-white text-2xl bg-blue-500 p-3 rounded-full">
-              <HiOutlineInformationCircle />
-            </button>
-          </Link>
-          <Link to="/">
-            <button className="text-white text-2xl bg-blue-500 p-3 rounded-full">
-              <HiOutlineHeart />
-            </button>
-          </Link>
-        </div>
+            <Link to={`/product/${product?._id}`}>
+              <button className="text-white text-2xl bg-blue-500 p-3 rounded-full">
+                <HiOutlineInformationCircle />
+              </button>
+            </Link>
+            <Link to="/">
+              <button className="text-white text-2xl bg-blue-500 p-3 rounded-full">
+                <HiOutlineHeart />
+              </button>
+            </Link>
+          </div>
+        )}
       </div>
       <div className="h-48 bg-blue-300 relative">
         <img

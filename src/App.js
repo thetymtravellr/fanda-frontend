@@ -1,6 +1,7 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
+import Cart from "./pages/Cart/Cart";
 import ContactUsPage from "./pages/ContactUsPage";
 import HomePage from "./pages/HomePage/HomePage";
 import ItemsByCategory from "./pages/ItemsByCategory/ItemsByCategory";
@@ -20,7 +21,7 @@ function App() {
           <Route path="/new" element={<WorksPage />} />
           <Route path="/category/:title" element={<ItemsByCategory />} />
           <Route path="/product/:id" element={<ProductDetail />} />
-          <Route path="/cart" element={<ContactUsPage />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/wishlist" element={<ContactUsPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />

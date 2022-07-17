@@ -11,6 +11,13 @@ input::placeholder {
   font-weight: 400;
   font-size: 0.85rem;
 }
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
 
 body {
   font-family: "Poppins", sans-serif;

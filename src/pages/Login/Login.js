@@ -2,14 +2,17 @@ import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { HiOutlineEye, HiOutlineEyeOff } from "react-icons/hi";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import GoogleLogin from "./GoogleLogin";
 
 const Login = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [showPassword, setShowPassword] = useState(false);
   const [user, loading, error] = useAuthState(auth);
+  const from = location.state?.from?.pathname || "/";
+
   const {
     register,
     formState: { errors },
@@ -19,7 +22,23 @@ const Login = () => {
   const onSubmit = (data) => console.log(data);
 
   if (user) {
-    navigate("/");
+    console.log('user');
+    const url = "http://localhost:8080/login";
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify({
+        email: user.email,
+      }),
+      headers: {
+        "Content-type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        localStorage.setItem("accessToken", data.token);
+        navigate(from, { replace: true });
+      });
   }
 
   return (
@@ -72,9 +91,7 @@ const Login = () => {
                       : "border-gray-200"
                   }`}
                   id="grid-password"
-                  type={
-                    showPassword ? "text" : "password"
-                  }
+                  type={showPassword ? "text" : "password"}
                   placeholder="enter password"
                   {...register("password", { required: true, minLength: 6 })}
                 />
@@ -117,7 +134,7 @@ const Login = () => {
         <div class="divider">OR</div>
         <div className="w-full text-center mt-4">
           <p className="mb-4">Continue With</p>
-          <GoogleLogin/>
+          <GoogleLogin />
         </div>
       </div>
       <div></div>

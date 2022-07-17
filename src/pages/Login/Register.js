@@ -1,22 +1,24 @@
 import React, { useState } from "react";
 import {
-    useAuthState,
-    useCreateUserWithEmailAndPassword
+  useAuthState,
+  useCreateUserWithEmailAndPassword
 } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { HiOutlineEye, HiOutlineEyeOff } from "react-icons/hi";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import auth from "../../firebase.init";
 import GoogleLogin from "./GoogleLogin";
 
 const Register = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [showPassword, setShowPassword] = useState(false);
   const [user, loading, error] = useAuthState(auth);
+  const from = location.state?.from?.pathname || "/";
   const [createUserWithEmailAndPassword, createUser, userLoading, userError] =
     useCreateUserWithEmailAndPassword(auth);
-    
+
   const {
     register,
     formState: { errors },
@@ -26,7 +28,21 @@ const Register = () => {
   const onSubmit = (data) => console.log(data);
 
   if (user) {
-    navigate("/");
+    const url = "http://localhost:8080/login";
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify({
+        email: user.email,
+      }),
+      headers: {
+        "Content-type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        localStorage.setItem("accessToken", data.token);
+        navigate(from, { replace: true });
+      });
   }
 
   return (
@@ -79,13 +95,11 @@ const Register = () => {
                       : "border-gray-200"
                   }`}
                   id="grid-password"
-                  type={
-                    showPassword ? "text" : "password"
-                  }
+                  type={showPassword ? "text" : "password"}
                   placeholder="enter password"
                   {...register("password", { required: true, minLength: 6 })}
                 />
-                  <button
+                <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
                   className="absolute top-1/2 right-4 transform -translate-y-1/2 text-lg"
@@ -123,7 +137,7 @@ const Register = () => {
         <div class="divider">OR</div>
         <div className="w-full text-center mt-4">
           <p className="mb-4">Continue With</p>
-          <GoogleLogin/>
+          <GoogleLogin />
         </div>
       </div>
       <div></div>
