@@ -20,7 +20,7 @@ const Card = ({ product }) => {
               <HiOutlineShoppingCart />
             </button>
           </Link>
-          <Link to="/">
+          <Link to={`/product/${product?._id}`}>
             <button className="text-white text-2xl bg-blue-500 p-3 rounded-full">
               <HiOutlineInformationCircle />
             </button>

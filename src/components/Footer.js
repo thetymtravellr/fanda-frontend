@@ -1,8 +1,13 @@
 import React from "react";
 import { BsFacebook, BsInstagram, BsMedium, BsTwitter } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Footer = () => {
+  const location = useLocation()
+  console.log(location);
+  if((location.pathname === "/login") || (location.pathname === '/register')){
+    return null
+  }
   return (
     <footer className="border px-4 py-10 text-black">
       <div className="w-full max-w-6xl mx-auto flex flex-col justify-center space-y-20">

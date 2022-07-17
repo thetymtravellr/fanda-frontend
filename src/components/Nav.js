@@ -1,7 +1,11 @@
+import { signOut } from "firebase/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { HiOutlineHeart, HiOutlineShoppingCart } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import auth from "../firebase.init";
 
 const Nav = () => {
+  const [user, loading, error] = useAuthState(auth);
   return (
     <header className="border flex items-center px-8 py-2 bg-blue-300 text-white">
       <div className="">
@@ -36,9 +40,11 @@ const Nav = () => {
           <Link to="/cart">
             <HiOutlineShoppingCart className="text-xl" />
           </Link>
-          <div className="dropdown dropdown-end">
+          {
+            user ?
+            <div className="dropdown dropdown-end">
             <label tabIndex="0" className="cursor-pointer">
-              <div className="w-12 rounded-full border-2  border-gray-300">
+              <div className="w-10 rounded-full border-2  border-gray-300">
                 <img
                   className="rounded-full"
                   src="https://monstar-lab.com/global/wp-content/uploads/sites/11/2019/04/male-placeholder-image.jpeg"
@@ -46,15 +52,20 @@ const Nav = () => {
                 />
               </div>
             </label>
-            <ul className="dropdown-content menu bg-gray-200 w-40 mt-2 rounded-md font-semibold">
+            <ul className="dropdown-content menu bg-blue-300 w-40 mt-2 rounded-md font-semibold">
               <li>
                 <Link to="/profile">Profile</Link>
               </li>
               <li>
-                <button>Log Out</button>
+                <button onClick={()=>signOut(auth)}>Log Out</button>
               </li>
             </ul>
           </div>
+          :
+          <Link to='/login'>
+          Login
+          </Link>
+          }
         </div>
       </nav>
     </header>
