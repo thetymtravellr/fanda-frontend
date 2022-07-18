@@ -1,72 +1,71 @@
-import { signOut } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { HiOutlineHeart, HiOutlineShoppingCart } from "react-icons/hi";
-import { Link } from "react-router-dom";
+import { AiOutlineInstagram } from "react-icons/ai";
+import { BsFacebook, BsTwitter } from "react-icons/bs";
+import {
+  HiOutlineHeart,
+  HiOutlineSearch,
+  HiOutlineShoppingCart,
+  HiOutlineUser
+} from "react-icons/hi";
+import { Link, useNavigate } from "react-router-dom";
 import auth from "../firebase.init";
+import CustomLink from "./CustomLink";
 
 const Nav = () => {
   const [user, loading, error] = useAuthState(auth);
+  const navigate = useNavigate();
   return (
-    <header className="border flex items-center px-8 py-2 bg-blue-300 text-white">
-      <div className="">
-        <Link to="/">
-          <h1 className="text-3xl font-bold text-center">Fanda</h1>
-        </Link>
-      </div>
-      <nav className="flex items-center justify-between px-4 w-full max-w-2xl ml-auto">
-        <div className="flex w-full max-w-md bg-blue-400 rounded h-10">
-          <input
-            type="text"
-            className="bg-transparent outline-none w-full px-3 text-base-100 text-sm uppercase"
-            placeholder="search for items, brand"
-          />
-          <button className="w-20 rounded-r hover:bg-blue-600 h-full">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-search"
-              viewBox="0 0 16 16"
-            >
-              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-            </svg>
-          </button>
+    <header className="w-full py-4">
+      <div className="w-full flex justify-between items-center px-8 py-2 border-b">
+        <div className="flex space-x-3">
+          <a href="https://facebook.com" target="_blank" rel="noreferrer">
+            <BsFacebook className="text-xl" />
+          </a>
+          <a href="https://facebook.com" target="_blank" rel="noreferrer">
+            <AiOutlineInstagram className="text-xl" />
+          </a>
+          <a href="https://facebook.com" target="_blank" rel="noreferrer">
+            <BsTwitter className="text-xl" />
+          </a>
         </div>
-        <div className="flex items-center space-x-4 text-white">
+        <div className="">
+          <Link to="/">
+            <h1 className="text-3xl font-bold text-center uppercase">Fanda</h1>
+          </Link>
+        </div>
+        <div className="flex items-center space-x-4">
+          <button>
+            <HiOutlineSearch className="text-xl" />
+          </button>
           <Link to="/wishlist">
             <HiOutlineHeart className="text-xl" />
           </Link>
           <Link to="/cart">
             <HiOutlineShoppingCart className="text-xl" />
           </Link>
-          {
-            user ?
-            <div className="dropdown dropdown-end">
-            <label tabIndex="0" className="cursor-pointer">
-              <div className="w-10 rounded-full border-2  border-gray-300">
-                <img
-                  className="rounded-full"
-                  src="https://monstar-lab.com/global/wp-content/uploads/sites/11/2019/04/male-placeholder-image.jpeg"
-                  alt=""
-                />
-              </div>
-            </label>
-            <ul className="dropdown-content menu bg-blue-300 w-40 mt-2 rounded-md font-semibold">
-              <li>
-                <Link to="/profile">Profile</Link>
-              </li>
-              <li>
-                <button onClick={()=>signOut(auth)}>Log Out</button>
-              </li>
-            </ul>
-          </div>
-          :
-          <Link to='/login'>
-          Login
+          <Link to="/profile">
+            <HiOutlineUser className="text-xl" />
           </Link>
-          }
         </div>
+      </div>
+      <nav className="w-full py-4">
+        <ul className="w-full flex justify-center space-x-6 font-medium uppercase">
+          <li>
+            <CustomLink to="/">Home</CustomLink>
+          </li>
+          <li>
+            <CustomLink to="/shop">Shop</CustomLink>
+          </li>
+          <li>
+            <CustomLink to="/category">Category</CustomLink>
+          </li>
+          <li>
+            <CustomLink to="/blog">Blog</CustomLink>
+          </li>
+          <li>
+            <CustomLink to="/contact">Contact</CustomLink>
+          </li>
+        </ul>
       </nav>
     </header>
   );
