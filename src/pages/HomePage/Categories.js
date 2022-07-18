@@ -10,10 +10,10 @@ import Category from "../../components/Category";
 
 const Categories = () => {
   return (
-    <section>
+    <section className="max-w-7xl mx-auto ">
       <h1 className="text-3xl">Category</h1>
       <div className="flex flex-wrap justify-center space-x-8 my-4 items-end md:items-center md:space-y-0 space-y-4">
-        <Category title="clothing" >
+        <Category title="clothing">
           <IoShirtOutline className="text-2xl mx-auto mb-2" />
         </Category>
         <Category title="electronics">
@@ -37,7 +37,7 @@ const Categories = () => {
       </div>
       <div className="w-full text-center mt-10">
         <Link className="" to="/">
-          <button className="btn-primary border-blue-400  text-blue-400 hover:bg-blue-500 hover:border-blue-500 bg-transparent">
+          <button className="btn-custom border-blue-500  text-white bg-blue-500">
             See All Category
           </button>
         </Link>

@@ -55,13 +55,13 @@ const ProductDetail = () => {
         </div>
         <div className="flex justify-center space-x-3 mt-6">
           <button
-            className="btn-primary tooltip tooltip-primary text-white"
+            className="btn-custom tooltip tooltip-primary text-white"
             data-tip="Add to cart"
           >
             <HiOutlineShoppingCart className="text-xl" />
           </button>
           <button
-            className="btn-primary tooltip tooltip-primary text-white"
+            className="btn-custom tooltip tooltip-primary text-white"
             data-tip="add to wishlist"
           >
             <HiOutlineHeart className="text-xl" />

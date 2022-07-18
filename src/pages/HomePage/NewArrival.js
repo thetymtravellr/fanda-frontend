@@ -24,7 +24,7 @@ const NewArrival = () => {
   }, []);
 
   return (
-    <section className="my-8">
+    <section className="my-8 max-w-7xl mx-auto ">
       <h1 className="text-3xl mb-4">New Arrival</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center gap-4">
         {products.length > 0 &&
@@ -34,7 +34,7 @@ const NewArrival = () => {
       </div>
       <div className="w-full text-center mt-10">
         <Link className="" to="/">
-          <button className="btn-primary border-blue-400  text-blue-400 hover:bg-blue-500 hover:border-blue-500 bg-transparent">
+          <button className="btn-custom text-white bg-blue-500 border-blue-500">
             See More
           </button>
         </Link>

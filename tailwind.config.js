@@ -19,7 +19,8 @@ module.exports = {
       },
       fontFamily: {
         'poppins': ['Poppins', 'sans-serif'],
-        'roboto-condensed': ['Roboto Condensed', 'sans-serif']
+        'roboto-condensed': ['Roboto Condensed', 'sans-serif'],
+        'caveat': ['Caveat', 'cursive']
       }
     },
   },

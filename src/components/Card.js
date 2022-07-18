@@ -36,7 +36,7 @@ const Card = ({ product }) => {
         {added ? (
           <div className="h-32 grid place-content-center">
             <Link to="/cart">
-              <button className="btn-primary text-white">Go To Cart</button>
+              <button className="btn-custom text-white">Go To Cart</button>
             </Link>
           </div>
         ) : (

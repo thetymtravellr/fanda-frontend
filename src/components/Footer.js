@@ -35,7 +35,7 @@ const Footer = () => {
             </li>
           </ul>
           <div>
-            <button className="btn-primary bg-transparent border-black text-black">Join Our Newsletter</button>
+            <button className="btn-custom bg-transparent border-black text-black">Join Our Newsletter</button>
           </div>
         </div>
         <div className="flex justify-between max-w-2xl">

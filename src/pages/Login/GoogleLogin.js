@@ -1,6 +1,5 @@
 import React from "react";
-import { useAuthState, useSignInWithGoogle } from "react-firebase-hooks/auth";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import googleLogo from "../../assets/images/icons/google.png";
 import auth from "../../firebase.init";
 
@@ -9,7 +8,7 @@ const GoogleLogin = () => {
   
   return (
     <button
-      className="btn-primary border-blue-400  text-blue-400 hover:bg-blue-300 hover:border-blue-500 bg-transparent"
+      className="btn-custom border-blue-400  text-blue-400 hover:bg-blue-300 hover:border-blue-500 bg-transparent"
       onClick={() => signInWithGoogle()}
     >
       <img className="w-8" src={googleLogo} alt="" />

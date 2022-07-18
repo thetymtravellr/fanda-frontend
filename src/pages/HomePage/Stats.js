@@ -9,7 +9,7 @@ const Stats = () => {
   const elemRef = useRef();
   const isVisible = useIsVisible(elemRef);
   return (
-    <section ref={elemRef} className="my-10">
+    <section ref={elemRef} className="my-10 max-w-7xl mx-auto ">
       <div className="flex justify-center space-x-6">
         {isVisible && (
           <>
@@ -17,8 +17,12 @@ const Stats = () => {
               {({ countUpRef }) => (
                 <div className="border flex items-center space-x-4 text-right px-6 py-4">
                   <div>
-                    <p className="text-2xl font-extrabold"><span ref={countUpRef} />+</p>
-                    <p className="text-gray-400 font-medium uppercase">Countries</p>
+                    <p className="text-2xl font-extrabold">
+                      <span ref={countUpRef} />+
+                    </p>
+                    <p className="text-gray-400 font-medium uppercase">
+                      Countries
+                    </p>
                   </div>
                   <div>
                     <FaGlobeAsia className="text-5xl text-blue-500" />
@@ -30,8 +34,12 @@ const Stats = () => {
               {({ countUpRef }) => (
                 <div className="border flex items-center space-x-4 text-right px-6 py-4">
                   <div>
-                  <p className="text-2xl font-extrabold"><span ref={countUpRef} />+</p>
-                    <p className="text-gray-400 font-medium uppercase">Employees</p>
+                    <p className="text-2xl font-extrabold">
+                      <span ref={countUpRef} />+
+                    </p>
+                    <p className="text-gray-400 font-medium uppercase">
+                      Employees
+                    </p>
                   </div>
                   <div>
                     <HiOutlineUserGroup className="text-5xl text-teal-500" />
@@ -43,8 +51,12 @@ const Stats = () => {
               {({ countUpRef }) => (
                 <div className="border flex items-center space-x-4 text-right px-6 py-4">
                   <div>
-                  <p className="text-2xl font-extrabold"><span ref={countUpRef} />+</p>
-                    <p className="text-gray-400 font-medium uppercase">Products Sold</p>
+                    <p className="text-2xl font-extrabold">
+                      <span ref={countUpRef} />+
+                    </p>
+                    <p className="text-gray-400 font-medium uppercase">
+                      Products Sold
+                    </p>
                   </div>
                   <div>
                     <BsBox className="text-5xl text-pink-500" />
