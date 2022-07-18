@@ -1,5 +1,6 @@
 import React from "react";
-import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import { useAuthState, useSignInWithGoogle } from "react-firebase-hooks/auth";
+import { useLocation, useNavigate } from "react-router-dom";
 import googleLogo from "../../assets/images/icons/google.png";
 import auth from "../../firebase.init";
 

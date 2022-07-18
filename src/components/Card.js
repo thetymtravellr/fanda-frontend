@@ -1,13 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   HiOutlineHeart,
   HiOutlineInformationCircle,
   HiOutlineShoppingCart
 } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import { handleAddToCart } from "../utilities/db";
 
 const Card = ({ product }) => {
   const [added, setAdded] = useState(false);
+  const checkCart = () => {
+    const getCart = localStorage.getItem("shopping-cart");
+
+    if (getCart) {
+      const storedCart = JSON.parse(getCart);
+      const checkProduct = Object.keys(storedCart).find(
+        (item) => product._id === item
+      );
+      console.log(checkProduct);
+      if (checkProduct) setAdded(true);
+    }
+  };
+  useEffect(() => {
+    checkCart();
+  });
+
   return (
     <div className="h-64 w-64 text-center rounded overflow-hidden group relative">
       <div className="absolute z-10 w-full h-full bg-blue-600 opacity-0 group-hover:opacity-95  duration-200">
@@ -27,6 +44,7 @@ const Card = ({ product }) => {
             <button
               type="button"
               className="text-white text-2xl bg-blue-500 p-3 rounded-full"
+              onClick={() => handleAddToCart(product?._id, checkCart)}
             >
               <HiOutlineShoppingCart />
             </button>
