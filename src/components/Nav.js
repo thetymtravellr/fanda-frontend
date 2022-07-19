@@ -7,13 +7,15 @@ import {
   HiOutlineShoppingCart,
   HiOutlineUser
 } from "react-icons/hi";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../firebase.init";
 import CustomLink from "./CustomLink";
 
 const Nav = () => {
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
+  const location = useLocation();
+
   return (
     <header className="w-full py-4">
       <div className="w-full flex justify-between items-center px-8 py-2 border-b">
@@ -48,25 +50,28 @@ const Nav = () => {
           </Link>
         </div>
       </div>
-      <nav className="w-full py-4">
-        <ul className="w-full flex justify-center space-x-6 font-medium uppercase">
-          <li>
-            <CustomLink to="/">Home</CustomLink>
-          </li>
-          <li>
-            <CustomLink to="/shop">Shop</CustomLink>
-          </li>
-          <li>
-            <CustomLink to="/category">Category</CustomLink>
-          </li>
-          <li>
-            <CustomLink to="/blog">Blog</CustomLink>
-          </li>
-          <li>
-            <CustomLink to="/contact">Contact</CustomLink>
-          </li>
-        </ul>
-      </nav>
+      {location.pathname === "/login" ||
+      location.pathname === "/register" ? null : (
+        <nav className="w-full py-4">
+          <ul className="w-full flex justify-center space-x-6 font-medium uppercase">
+            <li>
+              <CustomLink to="/">Home</CustomLink>
+            </li>
+            <li>
+              <CustomLink to="/shop">Shop</CustomLink>
+            </li>
+            <li>
+              <CustomLink to="/category">Category</CustomLink>
+            </li>
+            <li>
+              <CustomLink to="/blog">Blog</CustomLink>
+            </li>
+            <li>
+              <CustomLink to="/contact">Contact</CustomLink>
+            </li>
+          </ul>
+        </nav>
+      )}
     </header>
   );
 };

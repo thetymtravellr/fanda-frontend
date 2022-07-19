@@ -11,10 +11,13 @@ const Hero = () => {
         </div>
         <div>
           <h1 className="text-6xl text-white">
-            <span className="text-orange-500 font-caveat font-bold text-7xl">
-              Fanda
-            </span>{" "}
-            <br /> Exclusive Designs
+            <span class="highlight-container relative inline-block ">
+              <span class="highlight relative font-caveat">#Fanda</span>
+            </span>
+            <br />
+            <span className="text-white font-bold text-7xl">
+              Exclusive Designs
+            </span>
           </h1>
           <Link to="/exclusive">
             <button className="btn-custom text-white bg-orange-500 border-orange-500 mt-6">
