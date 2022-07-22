@@ -9,30 +9,8 @@ const Trending = () => {
   const dispatch = useDispatch();
 
   const fetchProducts = async () => {
-    const options = {
-      method: 'GET',
-      url: 'https://asos2.p.rapidapi.com/products/v2/list',
-      params: {
-        store: 'US',
-        offset: '0',
-        categoryId: '4209',
-        limit: '48',
-        country: 'US',
-        sort: 'freshness',
-        currency: 'USD',
-        sizeSchema: 'US',
-        lang: 'en-US'
-      },
-      headers: {
-        'X-RapidAPI-Key': '7a76966befmsha088dbee620d8c8p19e884jsn8f37c0f1d90c',
-        'X-RapidAPI-Host': 'asos2.p.rapidapi.com'
-      }
-    };
-    axios.request(options).then(function (response) {
-      dispatch(setProducts(response.data?.products))
-    }).catch(function (error) {
-      console.error(error);
-    });
+    const data = await axios.get('http://localhost:8080/products');
+      dispatch(setProducts(data?.data))
   };
 
   useEffect(() => {
@@ -53,7 +31,7 @@ const Trending = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-items-center gap-y-8">
           {products?.length > 0 &&
             products?.slice(0,6).map((product) => (
-              <Card key={product.id} product={product} />
+              <Card key={product.code} product={product} />
             ))}
         </div>
       </div>

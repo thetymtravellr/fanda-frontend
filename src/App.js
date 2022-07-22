@@ -1,7 +1,5 @@
 import { Route, Routes, useLocation } from "react-router-dom";
-import Footer from "./components/Footer";
 import Nav from "./components/Nav";
-import RequireAuth from "./components/RequireAuth";
 import Cart from "./pages/Cart/Cart";
 import ContactUsPage from "./pages/ContactUsPage";
 import HomePage from "./pages/HomePage/HomePage";
@@ -11,6 +9,7 @@ import Register from "./pages/Login/Register";
 import ProductDetail from "./pages/ProductDetail/ProductDetail";
 import Profile from "./pages/Profile/Profile";
 import WorksPage from "./pages/WorksPage";
+import RequireAuth from "./utilities/auth/RequireAuth";
 
 function App() {
   const location = useLocation();
@@ -37,7 +36,6 @@ function App() {
           <Route path="/register" element={<Register />} />
         </Routes>
       </div>
-      <Footer />
     </div>
   );
 }

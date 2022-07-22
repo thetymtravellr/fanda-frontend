@@ -6,6 +6,21 @@ import { icons } from "../../utilities/banner-icons";
 const Offer = () => {
   const elemRef = useRef();
   const isVisible = useIsVisible(elemRef);
+  /* 
+   window.addEventListener('storage', onStorage);
+  
+      return () => {
+          window.removeEventListener('storage', onStorage);
+      };
+  */
+  const name = "hasan";
+  const setLocal = () => {
+    localStorage.setItem("name", name);
+  };
+  const removeLocal = () => {
+    localStorage.removeItem("name");
+  };
+
   return (
     <section
       ref={elemRef}

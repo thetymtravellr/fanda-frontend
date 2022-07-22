@@ -1,22 +1,21 @@
-// use local storage to manage cart data
-const addToDb = (id) => {
-  let shoppingCart = {};
+// use local storage to manage wishlist data
+const addToWishlist = (id) => {
+  let wishlist = [];
+  let added;
 
-  //get the shopping cart from local storage
-  const storedCart = localStorage.getItem("shopping-cart");
-  if (storedCart) {
-    shoppingCart = JSON.parse(storedCart);
+  //get the shopping wishlist from local storage
+  const storedList = localStorage.getItem("shopping-wishlist");
+  if (storedList) {
+    wishlist = JSON.parse(storedList);
   }
-
+  added = wishlist.find((item) => item === id);
   // add quantity
-  const quantity = shoppingCart[id];
-  if (quantity) {
-    const newQuantity = quantity + 1;
-    shoppingCart[id] = newQuantity;
+  if (added) {
+    return;
   } else {
-    shoppingCart[id] = 1;
+    wishlist.push(id)
   }
-  localStorage.setItem("shopping-cart", JSON.stringify(shoppingCart));
+  localStorage.setItem("shopping-wishlist", JSON.stringify(wishlist));
 };
 
 const getStoredCart = () => {
@@ -45,5 +44,5 @@ const deleteShoppingCart = () => {
   localStorage.removeItem("shopping-cart");
 };
 
-export { addToDb, getStoredCart, removeFromDb, deleteShoppingCart };
+export { addToWishlist, getStoredCart, removeFromDb, deleteShoppingCart };
 

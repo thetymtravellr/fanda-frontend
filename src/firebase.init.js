@@ -11,8 +11,6 @@ const firebaseConfig = {
   appId: "1:735606983110:web:cdac54046d00d0a1edcac7"
 };
 
-console.log(process.env.REACT_APP_apiKey);
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);

@@ -1,44 +1,43 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 const Card = ({ product }) => {
-console.log(product);
-  const [added, setAdded] = useState(false);
-  const checkCart = () => {
-    const getCart = localStorage.getItem("shopping-cart");
+  
+  // const [added, setAdded] = useState(false);
+  // const checkCart = () => {
+  //   const getCart = localStorage.getItem("shopping-cart");
 
-    if (getCart) {
-      const storedCart = JSON.parse(getCart);
-      const checkProduct = Object.keys(storedCart).find(
-        (item) => product._id === item
-      );
-      if (checkProduct) setAdded(true);
-    }
-  };
+  //   if (getCart) {
+  //     const storedCart = JSON.parse(getCart);
+  //     const checkProduct = Object.keys(storedCart).find(
+  //       (item) => product._id === item
+  //     );
+  //     if (checkProduct) setAdded(true);
+  //   }
+  // };
+  // useEffect(() => {
+  //   checkCart();
+  // });
 
-  useEffect(() => {
-    checkCart();
-  });
-
-  const { id,imageUrl } = product
-  console.log(imageUrl);
-
+  const { _id, name, price, images } = product;
+  const image = images[0]?.url
+ 
   return (
     
     <div className="h-80 w-56 overflow-hidden group relative">
-      <Link to={`/product/${id}`}>
+      <Link to={`/product/${_id}`}>
       <div className="h-64">
         <img
           className="h-full w-full object-cover"
-          src={`https://${imageUrl}`}
+          src={image}
           alt=""
         />
       </div>
       </Link>
       <div className="mt-2 h-full px-4 text-center w-full text-sm">
-        {/* <p className="">{product?.name}</p> */}
+        <p className="">{name}</p>
         <p className="font-semibold">
-          {/* ${product?.price?.formattedValue} */}
+          $ {price}
         </p>
       </div>
     </div>
@@ -46,3 +45,17 @@ console.log(product);
 };
 
 export default Card;
+
+
+/* 
+name 
+price
+images
+categories
+sellingAttributes
+logoPicture 
+variantSizes
+categoryName
+rgbColors
+brandName
+*/
