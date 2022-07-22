@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 import { HiMinus, HiPlus } from "react-icons/hi";
 
-const TableRow = ({ item }) => {
-
-    const [quantity, setQuantity] = useState(1);
-
-    const increaseQuantity = () => {
-        setQuantity(prevQ => prevQ + 1)
+const TableRow = ({ item, index }) => {
+    
+  const [quantity, setQuantity] = useState(1);
+  const increaseQuantity = () => {
+    setQuantity((prevQ) => prevQ + 1);
+  };
+  const decreaseQuantity = () => {
+    if (quantity > 1) {
+      setQuantity((prevQ) => prevQ - 1);
+    } else {
+      return;
     }
+  };
 
-    const decreaseQuantity = () => {
-       if(quantity > 1){
-        setQuantity(prevQ => prevQ - 1)
-       } else {
-        return
-       }
-    }
+  const price = (quantity * Number(item.price)).toFixed(2);
 
   return (
     <tr>
@@ -36,10 +36,7 @@ const TableRow = ({ item }) => {
       </td>
       <td className="">
         <div className="flex space-x-2 items-center justify-center">
-          <button
-            onClick={decreaseQuantity}
-            className="text-xl font-bold"
-          >
+          <button onClick={decreaseQuantity} className="text-xl font-bold">
             <HiMinus />
           </button>
           <div className="w-16 h-10 border-2 rounded">
@@ -47,23 +44,17 @@ const TableRow = ({ item }) => {
               className="w-full h-full text-center outline-none font-medium"
               type="number"
               value={quantity}
-              onChange={(e) => setQuantity(e.target.value)}
+              onChange={(e) => setQuantity(Number(e.target.value))}
               name=""
               id=""
             />
           </div>
-          <button
-            onClick={increaseQuantity}
-            className="text-xl font-bold"
-          >
+          <button onClick={increaseQuantity} className="text-xl font-bold">
             <HiPlus />
           </button>
         </div>
       </td>
-      <td>{(quantity * Number(item.price)).toFixed(2)}</td>
-      <th>
-        <button class="btn btn-ghost btn-xs">details</button>
-      </th>
+      <td className="w-40 text-center">{price}</td>
     </tr>
   );
 };

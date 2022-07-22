@@ -18,15 +18,17 @@ const addToWishlist = (id) => {
   localStorage.setItem("shopping-wishlist", JSON.stringify(wishlist));
 };
 
-const getStoredCart = () => {
-  let shoppingCart = {};
+const getStoredWishlist = () => {
 
-  //get the shopping cart from local storage
-  const storedCart = localStorage.getItem("shopping-cart");
-  if (storedCart) {
-    shoppingCart = JSON.parse(storedCart);
+  let shoppingWishlist = {};
+
+  //get the shopping wishlist from local storage
+  const storedWishlist = localStorage.getItem("shopping-wishlist");
+
+  if (storedWishlist) {
+    shoppingWishlist = (JSON.parse(storedWishlist));
   }
-  return shoppingCart;
+  return shoppingWishlist;
 };
 
 const removeFromDb = (id) => {
@@ -44,5 +46,5 @@ const deleteShoppingCart = () => {
   localStorage.removeItem("shopping-cart");
 };
 
-export { addToWishlist, getStoredCart, removeFromDb, deleteShoppingCart };
+export { addToWishlist, getStoredWishlist, removeFromDb, deleteShoppingCart };
 

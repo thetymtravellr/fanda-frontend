@@ -18,9 +18,9 @@ const ProductDetail = () => {
   const [user] = useAuthState(auth);
   const [activeSize, setActiveSize] = useState(null);
   const [activeColor, setActiveColor] = useState(null);
+  const [error, setError] = useState(false);
+  const [message, setMessage] = useState("");
   const [product, setProduct] = useState({});
-
-  console.log(user);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -32,6 +32,25 @@ const ProductDetail = () => {
 
   const { images, name, price, variantSizes, rgbColors, brandName } = product;
   const image = images?.length > 0 && images[0]?.url;
+
+  const cartObj = () => {
+    if(user){
+      if (activeSize !== null && activeColor !== null) {
+        const data = {
+          name,
+          activeSize: variantSizes[activeSize],
+          activeColor: rgbColors[activeColor],
+          id,
+        };
+        addToDb(data);
+      } else {
+        setMessage("Please Add Size & Color");
+        setError(true);
+      }
+    } else {
+      navigate("/login")
+    }
+  };
 
   return (
     <div className="max-w-6xl min-h-[50vh] mx-auto flex justify-center items-center my-8 relative">
@@ -55,13 +74,18 @@ const ProductDetail = () => {
         </div>
         <div className="mt-6">
           <p className="text-lg font-bold">Size</p>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {variantSizes?.map((size, index) => (
               <button
                 className={` border-2 font-roboto-condensed py-2 px-6 rounded uppercase duration-300 active:scale-95  hover:shadow ${
                   activeSize === index ? " border-blue-500" : "border-gray-300"
                 }`}
-                onClick={() => setActiveSize(index)}
+                onClick={() => {
+                  setActiveSize(index);
+                  setError(false);
+                  setMessage("");
+                }}
               >
                 {size.filterCode}
               </button>
@@ -79,15 +103,19 @@ const ProductDetail = () => {
                 className={`border-2 h-6 w-6 rounded-full uppercase duration-300 active:scale-95 hover:shadow  ${
                   activeColor === index ? " border-blue-500" : "border-gray-300"
                 }`}
-                onClick={() => setActiveColor(index)}
+                onClick={() => {
+                  setActiveColor(index);
+                  setError(false);
+                  setMessage("");
+                }}
               ></button>
             ))}
           </div>
         </div>
-
+        {error && <p>{message}</p>}
         <div className="flex space-x-3 mt-8">
           <button
-            onClick={() => addToDb(id)}
+            onClick={cartObj}
             className="btn-custom bg-blue-500 border-blue-500 tooltip tooltip-primary text-white"
             data-tip="Add to cart"
           >

@@ -4,10 +4,8 @@ import TableRow from "../../components/TableRow";
 import { getStoredCart } from "../../utilities/db";
 
 const Cart = () => {
-
   const { products } = useSelector((state) => state.allProducts);
   const cart = getStoredCart();
-
   const cartItems = products?.filter((item) => cart.includes(item._id));
 
   return (
@@ -19,24 +17,31 @@ const Cart = () => {
         </div>
         <div className="mt-4">
           {cartItems?.length > 0 && (
-            <div class="overflow-x-auto">
-              <table class="table w-full">
-                <thead className="">
-                  <tr>
-                    <th>Product Details</th>
-                    <th className="text-center">Quantity</th>
-                    <th>Price</th>
-                    <th>Total</th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  {cartItems?.map((item) => (
-                   <TableRow key={item._id} item={item}/>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+            <>
+              <div class="overflow-x-auto">
+                <table class="table w-full">
+                  <thead className="">
+                    <tr className="text-center">
+                      <th className="text-left">Product Details</th>
+                      <th className="">Quantity</th>
+                      <th className="">Price</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cartItems?.map((item, index) => (
+                      <TableRow key={item._id} item={item} index={index} />
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="w-full flex justify-end">
+                <button 
+                
+                className="btn-custom bg-blue-500 text-white border-blue-500">
+                  Proceed To Checkout
+                </button>
+              </div>
+            </>
           )}
         </div>
       </div>
