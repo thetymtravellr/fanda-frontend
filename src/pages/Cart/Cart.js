@@ -1,15 +1,24 @@
-import React from "react";
+import React, { createContext, useState } from "react";
 import { useSelector } from "react-redux";
+import TableFooter from "../../components/TableFooter";
 import TableRow from "../../components/TableRow";
 import { getStoredCart } from "../../utilities/db";
+export const CartContext = createContext({})
 
 const Cart = () => {
   const { products } = useSelector((state) => state.allProducts);
   const cart = getStoredCart();
-  const cartItems = products?.filter((item) => cart.includes(item._id));
+  const cartItems = products?.filter(({ _id }) =>
+    cart.some((x) => x.id === _id)
+  );
+  
+  const priceObject = {}
+  const [priceObj, setPriceObj] = useState({})
+  const [total, setTotal] = useState(0)
 
   return (
-    <div className="min-h-[50vh] max-w-6xl mx-auto my-8">
+    <CartContext.Provider value={{priceObject, setPriceObj, setTotal, total}}>
+      <div className="min-h-[50vh] max-w-6xl mx-auto my-8">
       <div className="w-full">
         <div className="w-full flex justify-between border-b pb-4">
           <h1 className="text-3xl">Shopping Cart</h1>
@@ -29,15 +38,18 @@ const Cart = () => {
                   </thead>
                   <tbody>
                     {cartItems?.map((item, index) => (
-                      <TableRow key={item._id} item={item} index={index} />
+                      <TableRow
+                        key={item._id}
+                        item={item}
+                        index={index}
+                      />
                     ))}
                   </tbody>
+                  <TableFooter/>
                 </table>
               </div>
               <div className="w-full flex justify-end">
-                <button 
-                
-                className="btn-custom bg-blue-500 text-white border-blue-500">
+                <button className="btn-custom bg-blue-500 text-white border-blue-500">
                   Proceed To Checkout
                 </button>
               </div>
@@ -46,6 +58,7 @@ const Cart = () => {
         </div>
       </div>
     </div>
+    </CartContext.Provider>
   );
 };
 

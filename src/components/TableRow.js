@@ -1,21 +1,26 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { HiMinus, HiPlus } from "react-icons/hi";
+import { CartContext } from "../pages/Cart/Cart";
 
 const TableRow = ({ item, index }) => {
-    
+  const {priceObject, setPriceObj} = useContext(CartContext)
   const [quantity, setQuantity] = useState(1);
-  const increaseQuantity = () => {
-    setQuantity((prevQ) => prevQ + 1);
-  };
-  const decreaseQuantity = () => {
-    if (quantity > 1) {
-      setQuantity((prevQ) => prevQ - 1);
-    } else {
-      return;
-    }
-  };
+  const price = Number((Number(quantity) * Number(item.price)).toFixed(2));
+  priceObject[index] = price;
 
-  const price = (quantity * Number(item.price)).toFixed(2);
+  const handlePrice = (props) => {
+    if (props === 0) {
+      setQuantity((prevQ) => prevQ + 1);
+    }
+    if (props === 1) {
+      if (quantity > 1) {
+        setQuantity((prevQ) => prevQ - 1);
+      } else {
+        return;
+      }
+    }
+    setPriceObj(priceObject);
+  };
 
   return (
     <tr>
@@ -36,7 +41,7 @@ const TableRow = ({ item, index }) => {
       </td>
       <td className="">
         <div className="flex space-x-2 items-center justify-center">
-          <button onClick={decreaseQuantity} className="text-xl font-bold">
+          <button onClick={() => handlePrice(1)} className="text-xl font-bold">
             <HiMinus />
           </button>
           <div className="w-16 h-10 border-2 rounded">
@@ -49,7 +54,7 @@ const TableRow = ({ item, index }) => {
               id=""
             />
           </div>
-          <button onClick={increaseQuantity} className="text-xl font-bold">
+          <button onClick={() => handlePrice(0)} className="text-xl font-bold">
             <HiPlus />
           </button>
         </div>
