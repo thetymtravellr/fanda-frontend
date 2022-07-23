@@ -3,12 +3,12 @@ import { getAuth } from 'firebase/auth';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBalC0atCJUo4eBR7cjYDJeZqBO_bifZQ0",
-  authDomain: "fanda-commerce.firebaseapp.com",
-  projectId: "fanda-commerce",
-  storageBucket: "fanda-commerce.appspot.com",
-  messagingSenderId: "735606983110",
-  appId: "1:735606983110:web:cdac54046d00d0a1edcac7"
+  apiKey: process.env.REACT_APP_apiKey ,
+  authDomain: process.env.REACT_APP_authDomain ,
+  projectId: process.env.REACT_APP_projectId ,
+  storageBucket: process.env.REACT_APP_storageBucket ,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId ,
+  appId: process.env.REACT_APP_appId 
 };
 
 // Initialize Firebase

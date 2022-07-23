@@ -29,6 +29,9 @@ const Nav = () => {
           <a href="https://facebook.com" target="_blank" rel="noreferrer">
             <BsTwitter className="text-xl" />
           </a>
+          <a href="https://facebook.com" target="_blank" rel="noreferrer">
+            <BsTwitter className="text-xl" />
+          </a>
         </div>
         <div className="">
           <Link to="/">
@@ -58,10 +61,7 @@ const Nav = () => {
               <CustomLink to="/">Home</CustomLink>
             </li>
             <li>
-              <CustomLink to="/shop">Shop</CustomLink>
-            </li>
-            <li>
-              <CustomLink to="/category">Category</CustomLink>
+              <CustomLink to="/store">Store</CustomLink>
             </li>
             <li>
               <CustomLink to="/blog">Blog</CustomLink>
