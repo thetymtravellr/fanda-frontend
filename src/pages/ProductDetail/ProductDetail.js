@@ -24,7 +24,7 @@ const ProductDetail = () => {
 
   useEffect(() => {
     const fetchProduct = async () => {
-      const data = await axios.get(`http://localhost:8080/product/${id}`);
+      const data = await axios.get(`https://quiet-refuge-20911.herokuapp.com/product/${id}`);
       setProduct(data?.data);
     };
     fetchProduct();

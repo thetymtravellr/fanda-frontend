@@ -3,10 +3,10 @@ import { HiMinus, HiPlus } from "react-icons/hi";
 import { CartContext } from "../pages/Cart/Cart";
 
 const TableRow = ({ item, index }) => {
-  const {priceObject, setPriceObj} = useContext(CartContext)
+  const { allPrice, setPriceObj } = useContext(CartContext);
   const [quantity, setQuantity] = useState(1);
   const price = Number((Number(quantity) * Number(item.price)).toFixed(2));
-  priceObject[index] = price;
+  allPrice[index] = price;
 
   const handlePrice = (props) => {
     if (props === 0) {
@@ -19,7 +19,7 @@ const TableRow = ({ item, index }) => {
         return;
       }
     }
-    setPriceObj(priceObject);
+    setPriceObj(allPrice);
   };
 
   return (

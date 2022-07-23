@@ -2,19 +2,20 @@ import React, { useContext } from "react";
 import { CartContext } from "../pages/Cart/Cart";
 
 const TableFooter = () => {
-  const {priceObject, setTotal, total} = useContext(CartContext);
+  const {allPrice, setTotal, total} = useContext(CartContext);
   let sum = 0
-  for(const value in priceObject){
-    sum += priceObject[value];
+  for(const value in allPrice){
+    sum += allPrice[value];
   }
   setTotal(sum)
+
   return (
     <>
       <tfoot>
         <tr>
           <th></th>
           <th></th>
-          <th>Total: {total.toFixed(2)}</th>
+          <th>Total: {sum.toFixed(2)}</th>
         </tr>
       </tfoot>
     </>

@@ -9,7 +9,7 @@ const Trending = () => {
   const dispatch = useDispatch();
 
   const fetchProducts = async () => {
-    const data = await axios.get('http://localhost:8080/products');
+    const data = await axios.get('https://quiet-refuge-20911.herokuapp.com/products');
       dispatch(setProducts(data?.data))
   };
 

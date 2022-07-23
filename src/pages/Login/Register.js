@@ -28,7 +28,7 @@ const Register = () => {
   const onSubmit = (data) => console.log(data);
 
   if (user) {
-    const url = "http://localhost:8080/login";
+    const url = "https://quiet-refuge-20911.herokuapp.com/login";
     fetch(url, {
       method: "POST",
       body: JSON.stringify({
