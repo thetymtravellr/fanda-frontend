@@ -14,6 +14,9 @@ import CustomLink from "./CustomLink";
 const Navbar = () => {
   const [user, loading, error] = useAuthState(auth);
   const location = useLocation();
+  if(location.pathname === '/dashboard'){
+    return null
+  }
   return (
     <header className="w-full py-4">
       <div className="w-full flex justify-between items-center px-8 py-2 border-b">
