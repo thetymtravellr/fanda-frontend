@@ -6,7 +6,7 @@ import { getStoredWishlist } from "../../utilities/wishtlist";
 const Wishlist = () => {
   const { products } = useSelector((state) => state.allProducts);
   const wishlist = getStoredWishlist();
-  const wishlistItems = products?.filter((item) => wishlist.includes(item._id));
+  const wishlistItems = products?.length > 0 && products?.filter((item) => wishlist.includes(item._id));
 
   return (
     <div className="min-h-[50vh] max-w-6xl mx-auto my-8 px-8">
