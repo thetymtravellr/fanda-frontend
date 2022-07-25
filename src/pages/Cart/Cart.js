@@ -9,9 +9,9 @@ export const CartContext = createContext({});
 const Cart = () => {
   const { products } = useSelector((state) => state.allProducts);
   const cart = getStoredCart();
-  const cartItems = products?.filter(({ _id }) =>
-    cart?.some((x) => x.id === _id)
-  );
+  const cartItems = products?.length > 0 && products?.filter(({ _id }) =>
+  cart?.some((x) => x.id === _id)
+);
 
   const allPrice = {};
   const [priceObj, setPriceObj] = useState({});
