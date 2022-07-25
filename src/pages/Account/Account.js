@@ -22,7 +22,7 @@ const Account = () => {
       <div className="w-full">
         <h1 className="text-4xl font-semibold">Welcome {user?.displayName}</h1>
       </div>
-      <div className="flex justify-between mt-12">
+      <div className="flex flex-col md:flex-row justify-between mt-12">
         <div className="">
           <p className="text-2xl  border-b">Account Details</p>
           <div className="max-w-sm mt-6 flex flex-col space-y-4">
@@ -45,12 +45,12 @@ const Account = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col space-y-3">
+        <div className="flex flex-col space-y-3 mt-8">
           {userDb.role === "admin" ? (
-            <Link to="/dashboard"><button className="btn-custom hover:text-black">Dashboard</button></Link>
+            <Link to="/dashboard"><button className="btn-custom hover:text-black w-full">Dashboard</button></Link>
           ) : (
             <Link to="/my-orders">
-              <button className="btn-custom hover:text-black">My Orders</button>
+              <button className="btn-custom hover:text-black w-full">My Orders</button>
             </Link>
           )}
           <button

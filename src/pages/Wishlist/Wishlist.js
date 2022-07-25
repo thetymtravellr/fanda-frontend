@@ -9,7 +9,7 @@ const Wishlist = () => {
   const wishlistItems = products?.filter((item) => wishlist.includes(item._id));
 
   return (
-    <div className="min-h-[50vh] max-w-6xl mx-auto my-8">
+    <div className="min-h-[50vh] max-w-6xl mx-auto my-8 px-8">
       <div className="w-full">
         <div className="w-full flex justify-between border-b pb-4">
           <h1 className="text-3xl">Wishlist</h1>
