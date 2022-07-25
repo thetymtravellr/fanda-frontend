@@ -13,7 +13,7 @@ const Store = () => {
         <h1 className="text-3xl text-black text-center uppercase font-bold">Store</h1>
       </div>
       <div className="max-w-7xl mx-auto mt-6">
-        <div className="mb-4 flex space-x-2">
+        <div className="mb-4 flex space-x-2 justify-center md:justify-start">
           <Category title="man">
             <IoMan className="text-xl mx-auto mb-2" />
           </Category>

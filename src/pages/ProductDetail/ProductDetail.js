@@ -53,17 +53,17 @@ const ProductDetail = () => {
   };
 
   return (
-    <div className="max-w-6xl min-h-[50vh] mx-auto flex justify-center items-center my-8 relative">
+    <div className="max-w-6xl min-h-[50vh] mx-auto flex flex-col md:flex-row justify-center items-center my-8 relative">
       <button
         onClick={() => navigate(-1)}
-        className="absolute left-0 top-0 text-3xl hover:bg-gray-100 p-2 rounded-full"
+        className="absolute left-6 md:left-0 top-0 text-3xl hover:bg-gray-100 p-2 rounded-full"
       >
         <HiArrowNarrowLeft />
       </button>
-      <div className="w-1/2">
-        <img className="w-1/2 mx-auto" src={image} alt="" />
+      <div className="md:w-1/2">
+        <img className="md:w-1/2 mx-auto" src={image} alt="" />
       </div>
-      <div className="pl-8 w-1/2">
+      <div className="md:pl-8 mt-8 md:mt-0 md:w-1/2">
         <h1 className="text-lg bg-blue-500 w-fit text-white px-2">
           {brandName}
         </h1>
@@ -75,7 +75,7 @@ const ProductDetail = () => {
         <div className="mt-6">
           <p className="text-lg font-bold">Size</p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {variantSizes?.map((size, index) => (
               <button
                 className={` border-2 font-roboto-condensed py-2 px-6 rounded uppercase duration-300 active:scale-95  hover:shadow ${
@@ -92,9 +92,9 @@ const ProductDetail = () => {
             ))}
           </div>
         </div>
-        <div className="mt-6">
+        <div className="mt-6 md:text-left text-center">
           <p className="text-lg font-bold">Size</p>
-          <div className="flex space-x-3">
+          <div className="flex justify-center md:justify-start space-x-3">
             {rgbColors?.map((color, index) => (
               <button
                 style={{
@@ -112,8 +112,8 @@ const ProductDetail = () => {
             ))}
           </div>
         </div>
-        {error && <p>{message}</p>}
-        <div className="flex space-x-3 mt-8">
+        {error && <p className="text-center md:text-left">{message}</p>}
+        <div className="flex justify-center md:justify-start space-x-3 mt-8">
           <button
             onClick={cartObj}
             className="btn-custom bg-blue-500 border-blue-500 tooltip tooltip-primary text-white"
