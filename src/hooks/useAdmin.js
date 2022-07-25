@@ -8,7 +8,7 @@ const useAdmin = (user) => {
   useEffect(() => {
     const email = user?.email;
     if (email) {
-      axios.get(`http://localhost:8080/admin/${email}`)
+      axios.get(`https://quiet-refuge-20911.herokuapp.com/admin/${email}`)
       .then((data) => {
         console.log(data)
         setAdmin(data?.data);

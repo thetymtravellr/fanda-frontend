@@ -10,7 +10,7 @@ const Account = () => {
 
   useEffect(() => {
     const fetchUser = () => {
-      fetch(`http://localhost:8080/user?email=${user?.email}`)
+      fetch(`https://quiet-refuge-20911.herokuapp.com/user?email=${user?.email}`)
         .then((res) => res.json())
         .then((data) => setUserDb(data));
     };
