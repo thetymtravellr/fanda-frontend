@@ -10,12 +10,12 @@ const Stats = () => {
   const isVisible = useIsVisible(elemRef);
   return (
     <section ref={elemRef} className="my-10 max-w-7xl mx-auto ">
-      <div className="flex justify-center space-x-6">
+      <div className="flex flex-col md:flex-row justify-center md:space-x-6 space-y-4 md:space-y-0">
         {isVisible && (
           <>
             <CountUp end={45}>
               {({ countUpRef }) => (
-                <div className="border flex items-center space-x-4 text-right px-6 py-4">
+                <div className="border flex items-center md:justify-start justify-center space-x-4 text-center md:text-right px-6 py-4">
                   <div>
                     <p className="text-2xl font-extrabold">
                       <span ref={countUpRef} />+
@@ -32,7 +32,7 @@ const Stats = () => {
             </CountUp>
             <CountUp end={7500}>
               {({ countUpRef }) => (
-                <div className="border flex items-center space-x-4 text-right px-6 py-4">
+                <div className="border flex items-center md:justify-start justify-center space-x-4 text-center md:text-right px-6 py-4">
                   <div>
                     <p className="text-2xl font-extrabold">
                       <span ref={countUpRef} />+
@@ -49,7 +49,7 @@ const Stats = () => {
             </CountUp>
             <CountUp end={100}>
               {({ countUpRef }) => (
-                <div className="border flex items-center space-x-4 text-right px-6 py-4">
+                <div className="border flex items-center md:justify-start justify-center space-x-4 text-center md:text-right px-6 py-4">
                   <div>
                     <p className="text-2xl font-extrabold">
                       <span ref={countUpRef} />+

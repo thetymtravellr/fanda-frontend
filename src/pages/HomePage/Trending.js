@@ -18,11 +18,11 @@ const Trending = () => {
   }, []);
 
   return (
-    <section className="my-8 max-w-7xl mx-auto flex items-center justify-between">
+    <section className="my-8 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
       <div className="w-2/5 text-center">
         <h1 className="text-5xl font-normal mb-4">#trending</h1>
         <img
-          className="w-2/3 mx-auto"
+          className="w-2/3 mx-auto hidden md:block"
           src="https://images.unsplash.com/photo-1658139021064-9e32d25b4cc2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
           alt=""
         />

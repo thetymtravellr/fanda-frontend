@@ -10,27 +10,27 @@ const Footer = () => {
   return (
     <footer className="border px-4 py-10 text-black">
       <div className="w-full max-w-6xl mx-auto flex flex-col justify-center space-y-20">
-        <div className="flex justify-between w-full">
+        <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 w-full">
           <h1 className="text-2xl">Fanda Commerce Co.</h1>
           <ul className="flex items-center space-x-4">
             <li>
               <a href="https://facebook.com" target="_blank" rel="noreferrer">
-                <BsFacebook className="text-2xl" />
+                <BsFacebook className="text-xl md:text-2xl" />
               </a>
             </li>
             <li>
               <a href="https://facebook.com" target="_blank" rel="noreferrer">
-                <BsInstagram className="text-2xl" />
+                <BsInstagram className="text-xl md:text-2xl" />
               </a>
             </li>
             <li>
               <a href="https://facebook.com" target="_blank" rel="noreferrer">
-                <BsTwitter className="text-2xl" />
+                <BsTwitter className="text-xl md:text-2xl" />
               </a>
             </li>
             <li>
               <a href="https://facebook.com" target="_blank" rel="noreferrer">
-                <BsMedium className="text-2xl" />
+                <BsMedium className="text-xl md:text-2xl" />
               </a>
             </li>
           </ul>
@@ -38,7 +38,7 @@ const Footer = () => {
             <button className="btn-custom bg-transparent border-black text-black">Join Our Newsletter</button>
           </div>
         </div>
-        <div className="flex justify-between max-w-2xl">
+        <div className="flex flex-col md:flex-row  justify-between items-center md:items-start max-w-2xl space-y-4 md:space-y-0">
           <div>
             <address>Dhaka Bangladesh</address>
           </div>
@@ -58,9 +58,9 @@ const Footer = () => {
             <li>Contact</li>
           </ul>
         </div>
-        <div className="flex justify-between">
-            <p>&copy; 2022 Need Supply Company-All Rights Reserved</p>
-            <div className="flex space-x-6">
+        <div className="flex justify-center md:justify-between">
+            <p className="">&copy; 2022 Need Supply Company-All Rights Reserved</p>
+            <div className="space-x-6 hidden md:flex">
                 <Link to='/'>
                     Privacy Policy
                 </Link>

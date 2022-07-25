@@ -1,5 +1,6 @@
 import React, { createContext, useState } from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import TableFooter from "../../components/TableFooter";
 import TableRow from "../../components/TableRow";
 import { getStoredCart } from "../../utilities/db";
@@ -45,9 +46,11 @@ const Cart = () => {
                   </table>
                 </div>
                 <div className="w-full flex justify-end">
+                  <Link to="/checkout">
                   <button className="btn-custom bg-blue-500 text-white border-blue-500">
                     Proceed To Checkout
                   </button>
+                  </Link>
                 </div>
               </>
             ) : (

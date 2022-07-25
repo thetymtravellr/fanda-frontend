@@ -3,7 +3,9 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { HiOutlineEye, HiOutlineEyeOff } from "react-icons/hi";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import Loading from "../../components/Loading";
 import auth from "../../firebase.init";
+import useAdmin from "../../hooks/useAdmin";
 import GoogleLogin from "./GoogleLogin";
 
 const Login = () => {
@@ -12,6 +14,7 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [user, loading, error] = useAuthState(auth);
   const from = location.state?.from?.pathname || "/";
+  const [admin] = useAdmin(user);
 
   const {
     register,
@@ -22,7 +25,6 @@ const Login = () => {
   const onSubmit = (data) => console.log(data);
 
   if (user) {
-    console.log('user');
     const url = "https://quiet-refuge-20911.herokuapp.com/login";
     fetch(url, {
       method: "POST",
@@ -35,10 +37,23 @@ const Login = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         localStorage.setItem("accessToken", data.token);
-        navigate(from, { replace: true });
+        if (admin) {
+          navigate("/dashboard");
+        } else {
+          navigate(from, { replace: true });
+        }
       });
+  }
+
+  if (loading) {
+    return (
+      <>
+        <div className="">
+          <Loading />
+        </div>
+      </>
+    );
   }
 
   return (

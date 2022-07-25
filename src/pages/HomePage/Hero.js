@@ -4,18 +4,18 @@ import heroImage from "../../assets/images/products/tshirt.png";
 
 const Hero = () => {
   return (
-    <section className="min-h-[75vh] w-full bg-zinc-800">
-      <div className="w-full flex items-center">
-        <div>
+    <section className=" w-full bg-zinc-800">
+      <div className="w-full min-h-[75vh] flex items-center justify-center lg:justify-start">
+        <div className="hidden lg:block">
           <img className="max-w-2xl" src={heroImage} alt="" />
         </div>
-        <div>
-          <h1 className="text-6xl text-white">
+        <div className="text-center lg:text-left">
+          <h1 className="sm:text-6xl text-4xl text-white">
             <span class="highlight-container relative inline-block ">
               <span class="highlight relative font-caveat">#Fanda</span>
             </span>
             <br />
-            <span className="text-white font-bold text-7xl">
+            <span className="text-white font-bold sm:text-7xl">
               Exclusive Designs
             </span>
           </h1>

@@ -7,18 +7,17 @@ import Stats from "./Stats";
 import Trending from "./Trending";
 
 const HomePage = () => {
-
   return (
     <>
-    <main className="w-full px-4">
-      <Hero />
-      <Trending />
-      <NewArrival />
-      <Offer />
-      <Categories />
-      <Stats />
-    </main>
-    <Footer/>
+      <main className="w-full px-4">
+        <Hero />
+        <Trending />
+        <NewArrival />
+        <Offer />
+        <Categories />
+        <Stats />
+      </main>
+      <Footer />
     </>
   );
 };

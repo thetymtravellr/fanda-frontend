@@ -7,15 +7,13 @@ import {
   HiOutlineShoppingCart,
   HiOutlineUser
 } from "react-icons/hi";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import auth from "../firebase.init";
 import CustomLink from "./CustomLink";
 
-const Nav = () => {
+const Navbar = () => {
   const [user, loading, error] = useAuthState(auth);
-  const navigate = useNavigate();
   const location = useLocation();
-
   return (
     <header className="w-full py-4">
       <div className="w-full flex justify-between items-center px-8 py-2 border-b">
@@ -76,4 +74,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default Navbar;
