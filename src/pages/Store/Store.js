@@ -24,7 +24,7 @@ const Store = () => {
           <GrBaby className="text-2xl mx-auto mb-2" />
         </Category>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-items-center">
           {products?.map((product) => (
             <Card product={product} />
           ))}
