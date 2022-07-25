@@ -21,11 +21,11 @@ const Cart = () => {
     <CartContext.Provider value={{ allPrice, setPriceObj, setTotal, total }}>
       <div className="min-h-[50vh] max-w-6xl mx-auto my-8">
         <div className="w-full">
-          <div className="w-full flex justify-between border-b pb-4">
+          <div className="w-full flex justify-between border-b pb-4 px-8 lg:px-0">
             <h1 className="text-3xl">Shopping Cart</h1>
             <h1 className="text-3xl">{cartItems?.length} Item</h1>
           </div>
-          <div className="mt-4">
+          <div className="mt-4 mx-4">
             {cartItems?.length > 0 ? (
               <>
                 <div class="overflow-x-auto">
@@ -45,7 +45,7 @@ const Cart = () => {
                     <TableFooter />
                   </table>
                 </div>
-                <div className="w-full flex justify-end">
+                <div className="w-full flex justify-end mt-8">
                   <Link to="/checkout">
                   <button className="btn-custom bg-blue-500 text-white border-blue-500">
                     Proceed To Checkout
