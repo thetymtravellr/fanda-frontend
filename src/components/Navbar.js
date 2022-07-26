@@ -14,7 +14,7 @@ import CustomLink from "./CustomLink";
 const Navbar = () => {
   const [user, loading, error] = useAuthState(auth);
   const location = useLocation();
-  if(location.pathname === '/dashboard'){
+  if(location.pathname.includes("/dashboard")){
     return null
   }
   return (

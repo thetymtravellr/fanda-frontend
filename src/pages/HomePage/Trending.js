@@ -28,7 +28,7 @@ const Trending = () => {
         />
       </div>
       <div className="w-3/5 p-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-items-center gap-y-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-y-8">
           {products?.length > 0 &&
             products?.slice(0,6).map((product) => (
               <Card key={product.code} product={product} />

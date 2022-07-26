@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { Link } from "react-router-dom";
 import Icons from "../../components/Icons";
 import useIsVisible from "../../hooks/useIsVisible";
 import { icons } from "../../utilities/banner-icons";
@@ -36,9 +37,11 @@ const Offer = () => {
               Grab any 3 items and get 50% off!
               <br /> offer for limited time
             </h1>
+            <Link to="/store">
             <button className="mt-8 btn-custom text-white border-teal-500 hover:border-teal-500 bg-teal-500">
               Shop now
             </button>
+            </Link>
           </div>
         </div>
       )}

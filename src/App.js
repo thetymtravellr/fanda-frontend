@@ -4,6 +4,8 @@ import Account from "./pages/Account/Account";
 import Cart from "./pages/Cart/Cart";
 import Checkout from "./pages/Checkout/Checkout";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import Orders from "./pages/Dashboard/Orders";
+import Overview from "./pages/Dashboard/Overview";
 import UsersList from "./pages/Dashboard/UsersList";
 import HomePage from "./pages/HomePage/HomePage";
 import ItemsByCategory from "./pages/ItemsByCategory/ItemsByCategory";
@@ -41,7 +43,9 @@ function App() {
               </RequireAuth>
             }
           >
-            <Route index element={<UsersList />} />
+            <Route index element={<Overview />} />
+            <Route path="/dashboard/users" element={<UsersList />} />
+            <Route path="/dashboard/orders" element={<Orders />} />
           </Route>
           <Route path="/cart" element={<Cart />} />
           <Route path="/wishlist" element={<Wishlist />} />

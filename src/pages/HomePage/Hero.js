@@ -19,7 +19,7 @@ const Hero = () => {
               Exclusive Designs
             </span>
           </h1>
-          <Link to="/exclusive">
+          <Link to="/store">
             <button className="btn-custom text-white bg-orange-500 border-orange-500 mt-6">
               See More
             </button>

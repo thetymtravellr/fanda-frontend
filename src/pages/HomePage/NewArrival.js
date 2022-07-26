@@ -22,7 +22,7 @@ const NewArrival = () => {
   return (
     <section className="my-12 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
       <div className="w-3/5 px-6 order-2 md:order-1">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-items-center gap-y-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-y-8">
           {newArrival?.length > 0 &&
             newArrival
               ?.slice(0,6)
