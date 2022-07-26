@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Account from "./pages/Account/Account";
@@ -18,6 +19,18 @@ import Wishlist from "./pages/Wishlist/Wishlist";
 import RequireAuth from "./utilities/auth/RequireAuth";
 
 function App() {
+  
+  useEffect(()=>{
+    fetch("https://quiet-refuge-20911.herokuapp.com/",{
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      }
+    })
+    .then(res => res.json())
+    .then(data => console.log(data))
+  },[])
+
   return (
     <div className="App">
       <Navbar />
