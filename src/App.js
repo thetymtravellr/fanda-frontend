@@ -1,6 +1,8 @@
 import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import products from "./data/products.json";
 import Account from "./pages/Account/Account";
 import Cart from "./pages/Cart/Cart";
 import Checkout from "./pages/Checkout/Checkout";
@@ -16,20 +18,16 @@ import NotFound from "./pages/NotFound/NotFound";
 import ProductDetail from "./pages/ProductDetail/ProductDetail";
 import Store from "./pages/Store/Store";
 import Wishlist from "./pages/Wishlist/Wishlist";
+import { setProducts } from "./store/actions/productsActions";
 import RequireAuth from "./utilities/auth/RequireAuth";
 
 function App() {
-  
-  useEffect(()=>{
-    fetch("https://quiet-refuge-20911.herokuapp.com/",{
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json'
-      }
-    })
-    .then(res => res.json())
-    .then(data => console.log(data))
-  },[])
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setProducts(products));
+  }, []);
 
   return (
     <div className="App">

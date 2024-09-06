@@ -1,38 +1,50 @@
-import axios from "axios";
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import Card from "../../components/Card";
-import { setProducts } from "../../store/actions/productsActions";
+import React from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Trending = () => {
   const { products } = useSelector((state) => state.allProducts);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  const fetchProducts = async () => {
-    const data = await axios.get('https://quiet-refuge-20911.herokuapp.com/products');
-      dispatch(setProducts(data?.data))
-  };
+  // const fetchProducts = async () => {
+  //   const data = await axios.get('https://quiet-refuge-20911.herokuapp.com/products');
+  //   dispatch(setProducts(data?.data))
+  // };
 
-  useEffect(() => {
-    fetchProducts();
-  }, []);
+  // useEffect(() => {
+  //   fetchProducts();
+  // }, []);
 
   return (
-    <section className="my-8 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
-      <div className="w-2/5 text-center">
-        <h1 className="text-5xl font-normal mb-4">#trending</h1>
-        <img
-          className="w-2/3 mx-auto hidden md:block"
-          src="https://images.unsplash.com/photo-1658139021064-9e32d25b4cc2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-          alt=""
-        />
-      </div>
-      <div className="w-3/5 p-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-y-8">
-          {products?.length > 0 &&
-            products?.slice(0,6).map((product) => (
-              <Card key={product.code} product={product} />
-            ))}
+    <section className="my-8 ">
+      <div className="container">
+        <div className="flex flex-col md:flex-row gap-10 items-center justify-center">
+          <div className="text-center relative">
+            <img
+              className="h-full w-full object-cover"
+              src="https://images.unsplash.com/photo-1658139021064-9e32d25b4cc2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+              alt=""
+            />
+            <Link to="/store" className="absolute bottom-3 left-1/2 -translate-x-1/2">
+              <h2 className="text-3xl font-normal mb-4 text-white">Trending</h2>
+            </Link>
+          </div>
+          <div className="text-center">
+            <img
+              className=""
+              src="https://images.unsplash.com/photo-1658139021064-9e32d25b4cc2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+              alt=""
+            />
+            <h2 className="text-3xl font-normal mb-4">New Arrivals</h2>
+          </div>
+          <div className="text-center">
+            <img
+              className=""
+              src="https://images.unsplash.com/photo-1658139021064-9e32d25b4cc2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+              alt=""
+            />
+            <h2 className="text-3xl font-normal mb-4">Popular</h2>
+          </div>
         </div>
       </div>
     </section>

@@ -9,7 +9,7 @@ import Trending from "./Trending";
 const HomePage = () => {
   return (
     <>
-      <main className="w-full px-4">
+      <main className="w-full">
         <Hero />
         <Trending />
         <NewArrival />

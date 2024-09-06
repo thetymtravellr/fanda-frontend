@@ -1,0 +1,644 @@
+[
+    {
+        "id": "P001",
+        "name": "Classic White T-Shirt",
+        "description": "A comfortable, 100% cotton white t-shirt",
+        "category": "Men",
+        "price": 19.99,
+        "salePrice": null,
+        "currency": "USD",
+        "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL"
+        ],
+        "colors": [
+            "White"
+        ],
+        "images": [
+            "https://example.com/images/P001_front.jpg",
+            "https://example.com/images/P001_back.jpg"
+        ],
+        "stock": 100,
+        "tags": [
+            "casual",
+            "basic",
+            "essentials"
+        ]
+    },
+    {
+        "id": "P002",
+        "name": "Slim Fit Jeans",
+        "description": "Comfortable slim fit jeans for a modern look",
+        "category": "Men",
+        "price": 49.99,
+        "salePrice": 39.99,
+        "currency": "USD",
+        "sizes": [
+            "30x32",
+            "32x32",
+            "34x32",
+            "36x32"
+        ],
+        "colors": [
+            "Blue",
+            "Black"
+        ],
+        "images": [
+            "https://example.com/images/P002_front.jpg",
+            "https://example.com/images/P002_back.jpg"
+        ],
+        "stock": 75,
+        "tags": [
+            "denim",
+            "casual",
+            "trendy"
+        ]
+    },
+    {
+        "id": "P003",
+        "name": "Floral Summer Dress",
+        "description": "Light and breezy floral print dress for summer",
+        "category": "Women",
+        "price": 39.99,
+        "salePrice": null,
+        "currency": "USD",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Blue",
+            "Pink"
+        ],
+        "images": [
+            "https://example.com/images/P003_front.jpg",
+            "https://example.com/images/P003_side.jpg"
+        ],
+        "stock": 50,
+        "tags": [
+            "summer",
+            "floral",
+            "dress"
+        ]
+    },
+    {
+        "id": "P004",
+        "name": "Kids Dinosaur Pajamas",
+        "description": "Cozy pajamas with fun dinosaur prints",
+        "category": "Kids",
+        "price": 24.99,
+        "salePrice": null,
+        "currency": "USD",
+        "sizes": [
+            "2T",
+            "3T",
+            "4T",
+            "5T"
+        ],
+        "colors": [
+            "Green",
+            "Blue"
+        ],
+        "images": [
+            "https://example.com/images/P004_front.jpg",
+            "https://example.com/images/P004_back.jpg"
+        ],
+        "stock": 60,
+        "tags": [
+            "pajamas",
+            "kids",
+            "dinosaur"
+        ]
+    },
+    {
+        "id": "P005",
+        "name": "Leather Wallet",
+        "description": "Genuine leather wallet with multiple card slots",
+        "category": "Accessories",
+        "price": 29.99,
+        "salePrice": null,
+        "currency": "USD",
+        "sizes": [
+            "One Size"
+        ],
+        "colors": [
+            "Brown",
+            "Black"
+        ],
+        "images": [
+            "https://example.com/images/P005_front.jpg",
+            "https://example.com/images/P005_inside.jpg"
+        ],
+        "stock": 40,
+        "tags": [
+            "leather",
+            "wallet",
+            "accessory"
+        ]
+    },
+    {
+        "id": "P006",
+        "name": "Running Shoes",
+        "description": "Lightweight and comfortable running shoes",
+        "category": "Men",
+        "price": 89.99,
+        "salePrice": 79.99,
+        "currency": "USD",
+        "sizes": [
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"
+        ],
+        "colors": [
+            "Black/Red",
+            "Blue/White"
+        ],
+        "images": [
+            "https://example.com/images/P006_side.jpg",
+            "https://example.com/images/P006_top.jpg"
+        ],
+        "stock": 55,
+        "tags": [
+            "shoes",
+            "running",
+            "athletic"
+        ]
+    },
+    {
+        "id": "P007",
+        "name": "Formal Blazer",
+        "description": "Stylish blazer for formal occasions",
+        "category": "Women",
+        "price": 79.99,
+        "salePrice": null,
+        "currency": "USD",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L",
+            "XL"
+        ],
+        "colors": [
+            "Black",
+            "Navy"
+        ],
+        "images": [
+            "https://example.com/images/P007_front.jpg",
+            "https://example.com/images/P007_back.jpg"
+        ],
+        "stock": 30,
+        "tags": [
+            "formal",
+            "blazer",
+            "office"
+        ]
+    },
+    {
+        "id": "P008",
+        "name": "Graphic T-Shirt",
+        "description": "Fun graphic t-shirt with cool designs",
+        "category": "Kids",
+        "price": 14.99,
+        "salePrice": null,
+        "currency": "USD",
+        "sizes": [
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "White",
+            "Gray"
+        ],
+        "images": [
+            "https://example.com/images/P008_front.jpg",
+            "https://example.com/images/P008_back.jpg"
+        ],
+        "stock": 80,
+        "tags": [
+            "kids",
+            "graphic",
+            "t-shirt"
+        ]
+    },
+    {
+        "id": "P009",
+        "name": "Sunglasses",
+        "description": "UV protection sunglasses with polarized lenses",
+        "category": "Accessories",
+        "price": 59.99,
+        "salePrice": 49.99,
+        "currency": "USD",
+        "sizes": [
+            "One Size"
+        ],
+        "colors": [
+            "Black",
+            "Tortoise"
+        ],
+        "images": [
+            "https://example.com/images/P009_front.jpg",
+            "https://example.com/images/P009_side.jpg"
+        ],
+        "stock": 45,
+        "tags": [
+            "sunglasses",
+            "accessories",
+            "summer"
+        ]
+    },
+    {
+        "id": "P010",
+        "name": "Cargo Shorts",
+        "description": "Durable cargo shorts with multiple pockets",
+        "category": "Men",
+        "price": 34.99,
+        "salePrice": null,
+        "currency": "USD",
+        "sizes": [
+            "30",
+            "32",
+            "34",
+            "36",
+            "38"
+        ],
+        "colors": [
+            "Khaki",
+            "Olive"
+        ],
+        "images": [
+            "https://example.com/images/P010_front.jpg",
+            "https://example.com/images/P010_back.jpg"
+        ],
+        "stock": 65,
+        "tags": [
+            "shorts",
+            "cargo",
+            "casual"
+        ]
+    },
+    {
+        "id": "P011",
+        "name": "Yoga Pants",
+        "description": "Stretchy and comfortable yoga pants",
+        "category": "Women",
+        "price": 44.99,
+        "salePrice": null,
+        "currency": "USD",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L",
+            "XL"
+        ],
+        "colors": [
+            "Black",
+            "Gray",
+            "Navy"
+        ],
+        "images": [
+            "https://example.com/images/P011_front.jpg",
+            "https://example.com/images/P011_side.jpg"
+        ],
+        "stock": 70,
+        "tags": [
+            "yoga",
+            "athletic",
+            "comfortable"
+        ]
+    },
+    {
+        "id": "P012",
+        "name": "Kids Raincoat",
+        "description": "Waterproof raincoat with fun patterns",
+        "category": "Kids",
+        "price": 29.99,
+        "salePrice": null,
+        "currency": "USD",
+        "sizes": [
+            "2T",
+            "3T",
+            "4T",
+            "5T"
+        ],
+        "colors": [
+            "Yellow",
+            "Blue"
+        ],
+        "images": [
+            "https://example.com/images/P012_front.jpg",
+            "https://example.com/images/P012_back.jpg"
+        ],
+        "stock": 40,
+        "tags": [
+            "raincoat",
+            "kids",
+            "waterproof"
+        ]
+    },
+    {
+        "id": "P013",
+        "name": "Leather Belt",
+        "description": "Classic leather belt with silver buckle",
+        "category": "Accessories",
+        "price": 24.99,
+        "salePrice": null,
+        "currency": "USD",
+        "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL"
+        ],
+        "colors": [
+            "Brown",
+            "Black"
+        ],
+        "images": [
+            "https://example.com/images/P013_front.jpg",
+            "https://example.com/images/P013_detail.jpg"
+        ],
+        "stock": 55,
+        "tags": [
+            "belt",
+            "leather",
+            "accessory"
+        ]
+    },
+    {
+        "id": "P014",
+        "name": "Polo Shirt",
+        "description": "Classic polo shirt for a smart casual look",
+        "category": "Men",
+        "price": 29.99,
+        "salePrice": null,
+        "currency": "USD",
+        "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "XXL"
+        ],
+        "colors": [
+            "White",
+            "Navy",
+            "Red"
+        ],
+        "images": [
+            "https://example.com/images/P014_front.jpg",
+            "https://example.com/images/P014_back.jpg"
+        ],
+        "stock": 85,
+        "tags": [
+            "polo",
+            "casual",
+            "classic"
+        ]
+    },
+    {
+        "id": "P015",
+        "name": "Maxi Skirt",
+        "description": "Flowing maxi skirt for a boho chic look",
+        "category": "Women",
+        "price": 49.99,
+        "salePrice": 39.99,
+        "currency": "USD",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Floral",
+            "Solid Black"
+        ],
+        "images": [
+            "https://example.com/images/P015_front.jpg",
+            "https://example.com/images/P015_side.jpg"
+        ],
+        "stock": 35,
+        "tags": [
+            "skirt",
+            "maxi",
+            "boho"
+        ]
+    },
+    {
+        "id": "P016",
+        "name": "Kids Sneakers",
+        "description": "Comfortable and durable sneakers for active kids",
+        "category": "Kids",
+        "price": 34.99,
+        "salePrice": null,
+        "currency": "USD",
+        "sizes": [
+            "11",
+            "12",
+            "13",
+            "1",
+            "2",
+            "3"
+        ],
+        "colors": [
+            "Blue/White",
+            "Pink/Gray"
+        ],
+        "images": [
+            "https://example.com/images/P016_side.jpg",
+            "https://example.com/images/P016_top.jpg"
+        ],
+        "stock": 60,
+        "tags": [
+            "sneakers",
+            "kids",
+            "shoes"
+        ]
+    },
+    {
+        "id": "P017",
+        "name": "Beanie Hat",
+        "description": "Warm and stylish beanie hat for cold weather",
+        "category": "Accessories",
+        "price": 14.99,
+        "salePrice": null,
+        "currency": "USD",
+        "sizes": [
+            "One Size"
+        ],
+        "colors": [
+            "Gray",
+            "Black",
+            "Navy"
+        ],
+        "images": [
+            "https://example.com/images/P017_front.jpg",
+            "https://example.com/images/P017_side.jpg"
+        ],
+        "stock": 75,
+        "tags": [
+            "hat",
+            "beanie",
+            "winter"
+        ]
+    },
+    {
+        "id": "P018",
+        "name": "Dress Shirt",
+        "description": "Crisp dress shirt for formal occasions",
+        "category": "Men",
+        "price": 39.99,
+        "salePrice": null,
+        "currency": "USD",
+        "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "XXL"
+        ],
+        "colors": [
+            "White",
+            "Light Blue",
+            "Pink"
+        ],
+        "images": [
+            "https://example.com/images/P018_front.jpg",
+            "https://example.com/images/P018_back.jpg"
+        ],
+        "stock": 50,
+        "tags": [
+            "shirt",
+            "formal",
+            "business"
+        ]
+    },
+    {
+        "id": "P019",
+        "name": "Leggings",
+        "description": "Comfortable and versatile leggings",
+        "category": "Women",
+        "price": 24.99,
+        "salePrice": null,
+        "currency": "USD",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L",
+            "XL"
+        ],
+        "colors": [
+            "Black",
+            "Gray",
+            "Navy"
+        ],
+        "images": [
+            "https://example.com/images/P019_front.jpg",
+            "https://example.com/images/P019_back.jpg"
+        ],
+        "stock": 90,
+        "tags": [
+            "leggings",
+            "casual",
+            "comfortable"
+        ]
+    },
+    {
+        "id": "P020",
+        "name": "Kids Winter Jacket",
+        "description": "Warm and cozy winter jacket for kids",
+        "category": "Kids",
+        "price": 59.99,
+        "salePrice": 49.99,
+        "currency": "USD",
+        "sizes": [
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"
+        ],
+        "colors": [
+            "Red",
+            "Blue"
+        ],
+        "images": [
+            "https://example.com/images/P020_front.jpg",
+            "https://example.com/images/P020_back.jpg"
+        ],
+        "stock": 40,
+        "tags": [
+            "jacket",
+            "winter",
+            "kids"
+        ]
+    },
+    {
+        "id": "P021",
+        "name": "Scarf",
+        "description": "Soft and warm scarf for chilly days",
+        "category": "Accessories",
+        "price": 19.99,
+        "salePrice": null,
+        "currency": "USD",
+        "sizes": [
+            "One Size"
+        ],
+        "colors": [
+            "Gray",
+            "Red",
+            "Blue"
+        ],
+        "images": [
+            "https://example.com/images/P021_folded.jpg",
+            "https://example.com/images/P021_worn.jpg"
+        ],
+        "stock": 65,
+        "tags": [
+            "scarf",
+            "winter",
+            "accessory"
+        ]
+    },
+    {
+        "id": "P022",
+        "name": "Swim Trunks",
+        "description": "Quick-dry swim trunks for the beach or pool",
+        "category": "Men",
+        "price": 29.99,
+        "salePrice": null,
+        "currency": "USD",
+        "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL"
+        ],
+        "colors": [
+            "Navy",
+            "Red",
+            "Tropical Print"
+        ],
+        "images": [
+            "https://example.com/images/P022_front.jpg",
+            "https://example.com/images/P022_back.jpg"
+        ],
+        "stock": 55,
+        "tags": [
+            "swimwear",
+            "beach",
+            "summer"
+        ]
+    }
+]

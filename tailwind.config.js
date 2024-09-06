@@ -23,6 +23,9 @@ module.exports = {
         'caveat': ['Caveat', 'cursive']
       }
     },
+    container: {
+      center: true,
+    },
   },
   plugins: [require("daisyui")],
   daisyui: {

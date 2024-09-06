@@ -1,6 +1,4 @@
 import { useAuthState } from "react-firebase-hooks/auth";
-import { AiOutlineInstagram } from "react-icons/ai";
-import { BsFacebook, BsTwitter } from "react-icons/bs";
 import {
   HiOutlineHeart,
   HiOutlineSearch,
@@ -14,50 +12,15 @@ import CustomLink from "./CustomLink";
 const Navbar = () => {
   const [user, loading, error] = useAuthState(auth);
   const location = useLocation();
-  if(location.pathname.includes("/dashboard")){
+  if (location.pathname.includes("/dashboard")) {
     return null
   }
+
   return (
     <header className="w-full py-4">
-      <div className="w-full flex justify-between items-center px-8 py-2 border-b">
-        <div className="flex space-x-3">
-          <a href="https://facebook.com" target="_blank" rel="noreferrer">
-            <BsFacebook className="text-xl" />
-          </a>
-          <a href="https://facebook.com" target="_blank" rel="noreferrer">
-            <AiOutlineInstagram className="text-xl" />
-          </a>
-          <a href="https://facebook.com" target="_blank" rel="noreferrer">
-            <BsTwitter className="text-xl" />
-          </a>
-          <a href="https://facebook.com" target="_blank" rel="noreferrer">
-            <BsTwitter className="text-xl" />
-          </a>
-        </div>
-        <div className="">
-          <Link to="/">
-            <h1 className="text-3xl font-bold text-center uppercase">Fanda</h1>
-          </Link>
-        </div>
-        <div className="flex items-center space-x-4">
-          <button>
-            <HiOutlineSearch className="text-xl" />
-          </button>
-          <Link to="/wishlist">
-            <HiOutlineHeart className="text-xl" />
-          </Link>
-          <Link to="/cart">
-            <HiOutlineShoppingCart className="text-xl" />
-          </Link>
-          <Link to="/profile">
-            <HiOutlineUser className="text-xl" />
-          </Link>
-        </div>
-      </div>
-      {location.pathname === "/login" ||
-      location.pathname === "/register" ? null : (
-        <nav className="w-full py-4">
-          <ul className="w-full flex justify-center space-x-6 font-medium uppercase">
+      <div className="container">
+        <div className="w-full flex justify-between items-center px-8 py-2">
+          <ul className="w-1/4 flex gap-3 font-medium uppercase">
             <li>
               <CustomLink to="/">Home</CustomLink>
             </li>
@@ -71,8 +34,27 @@ const Navbar = () => {
               <CustomLink to="/contact">Contact</CustomLink>
             </li>
           </ul>
-        </nav>
-      )}
+          <div className="w-full">
+            <Link to="/">
+              <h1 className="text-3xl font-bold text-center uppercase">Fanda</h1>
+            </Link>
+          </div>
+          <div className="w-1/4 flex items-center justify-end space-x-4">
+            <button>
+              <HiOutlineSearch className="text-xl" />
+            </button>
+            <Link to="/wishlist">
+              <HiOutlineHeart className="text-xl" />
+            </Link>
+            <Link to="/cart">
+              <HiOutlineShoppingCart className="text-xl" />
+            </Link>
+            <Link to="/profile">
+              <HiOutlineUser className="text-xl" />
+            </Link>
+          </div>
+        </div>
+      </div>
     </header>
   );
 };
